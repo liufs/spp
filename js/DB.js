@@ -322,7 +322,7 @@
  	db = false;
  	alert('Failed to cennect to database.');
  } else {
- 	alert("tabel exist");
+// 	alert("tabel exist");
  }
 
  /*=======================================*/
@@ -363,6 +363,11 @@
  insertProduct("5", "2", "2", "2", "2");
  insertProduct("6", "2", "2", "2", "2");
  insertProduct("7", "2", "2", "2", "2");
+ insertProduct("8", "2", "2", "2", "2");
+ insertProduct("9", "2", "2", "2", "2");
+ insertProduct("10", "2", "2", "2", "2");
+ insertProduct("11", "2", "2", "2", "2");
+ insertProduct("12", "2", "2", "2", "2");
 
  function insertClassification(id, name) {
  	var row = [];

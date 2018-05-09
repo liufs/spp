@@ -47,7 +47,10 @@
 		],
 		"refer": [
 			"index.html",
-			"home.html"
+			"home.html",
+			"login.html",
+			"collection.html",
+			"userInfo.html"
 		]
 	},
 	"homeTab.html": {
@@ -70,13 +73,19 @@
 			"register.html"
 		],
 		"refer": [
-			"register.html"
+			"register.html",
+			"mine.html"
 		]
 	},
 	"register.html": {
 		"resources": [
 			"js/mui.min.js",
 			"css/mui.min.css"
+		]
+	},
+	"userInfo.html": {
+		"refer": [
+			"mine.html"
 		]
 	}
 }

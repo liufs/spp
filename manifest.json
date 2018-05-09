@@ -248,7 +248,10 @@
 					"css/mui.min.css"
 				],
 				"refer": [
-					"index.html"
+					"index.html",
+					"login.html",
+					"collection.html",
+					"userInfo.html"
 				],
 				"priority": 0
 			},
@@ -271,7 +274,9 @@
 					"css/mui.min.css",
 					"register.html"
 				],
-				"refer": [],
+				"refer": [
+					"mine.html"
+				],
 				"priority": 0
 			},
 			"register.html": {
@@ -280,6 +285,13 @@
 					"css/mui.min.css"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"userInfo.html": {
+				"resources": [],
+				"refer": [
+					"mine.html"
+				],
 				"priority": 0
 			}
 		},

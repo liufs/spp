@@ -17,13 +17,13 @@
 		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 		<script src="js/DB.js"></script>
 		<script type="text/javascript">
-    window.onload=function(){ 
-        // 初始化内容 
-       queryProduction();
-        queryClssification();
-        queryDynasty();
-    }
-</script> 
+			window.onload = function() {
+				// 初始化内容 
+				queryProduction();
+				queryClssification();
+				queryDynasty();
+			}
+		</script>
 		<style type="text/css">
 			h5 {
 				padding-top: 8px;
@@ -50,25 +50,24 @@
 
 	<body>
 
-		<div class="mui-content">
+		<div>
 
-			<div style="padding: 10px 10px;" id="header">
+			<div id="header">
 				<div id="segmentedControl" class="mui-segmented-control">
 					<a class="mui-control-item mui-active" href="#item1">作者</a>
 					<a class="mui-control-item" href="#item2">作品</a>
 					<a class="mui-control-item" href="#item3">分类</a>
 				</div>
 			</div>
-			<div>
+			<div class="mui-content">
 				<div id="item1" class="mui-control-content mui-active">
 
-					<div class="mui-content">
+					<div class="mui-content ">
 						<div id='list' class="mui-indexed-list">
-						
+
 							<div id="dynasty_list" class="mui-indexed-list-bar"></div>
-							<div class="mui-indexed-list-alert"></div>
-							<div  class="mui-indexed-list-inner">
-								
+							<div class="mui-indexed-list-inner">
+
 								<ul id="author_list" class="mui-table-view">
 								</ul>
 							</div>
@@ -76,16 +75,16 @@
 					</div>
 
 				</div>
-			
+
 				<div id="item2" class="mui-control-content">
 
 					<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed" id="production">
 					</ul>
 
 				</div>
-			
+
 				<div id="item3" class="mui-control-content "></div>
-				
+
 			</div>
 
 		</div>
@@ -96,14 +95,14 @@
 		<script src="js/mui.indexedlistjs/mui.indexedlist.js"></script>
 		<script>
 			mui.init();
-			mui.ready(function() {
-				var header = document.querySelector('header.mui-bar');
-				var list = document.getElementById('list');
-				//calc hieght
-				list.style.height = (document.body.offsetHeight) + 'px';
-				//create
-				window.indexedList = new mui.IndexedList(list);
-			});
+			//			mui.ready(function() {
+			//				var header = document.querySelector('header.mui-bar');
+			//				var list = document.getElementById('list');
+			//				//calc hieght
+			//				list.style.height = (document.body.offsetHeight) + 'px';
+			//				//create
+			//				window.indexedList = new mui.IndexedList(list);
+			//			});
 		</script>
 	</body>
 

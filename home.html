@@ -7,6 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script type="text/javascript" src="js/random.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 
 		<!--标准mui.css-->
 		<link rel="stylesheet" href="css/mui.min.css">
@@ -66,71 +68,37 @@
 		
 		
 		<header class="mui-bar mui-bar-nav" style="margin-bottom: 30px;padding-bottom: 30px;">
-			<a ></a>
-			<a href="homeAll.html" class="mui-pull-left" > <button style="font-size: 14px;color: darkgray;margin-top: 5px;">全部</button></a>
-					
-			<a id="menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-right" href="#topPopover"></a>
 			
-			<a id="menu" class="mui-action-menu mui-icon  mui-pull-right" href="#"></a>
-			
-			<a  class=" mui-icon mui-icon-plus mui-pull-right" href="login.html"></a>
+			<button id='refresh' class="mui-pull-left">刷新</button>
+			<button id='collecte' class="mui-pull-right">收藏</button>
 		</header>
 		
-		<div id="topPopover" class="mui-popover" style="display: none; top: 57px; left: 127px;height: 140px;">
-			<div class="mui-popover-arrow" style="left:248px"></div>
-			<div class="mui-scroll-wrapper" data-scroll="1">
-				<div class="mui-scroll" style="transform: translate3d(0px, 0px, 0px) translateZ(0px);">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell">
-							<a href="#">收藏</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">浏览记录</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">切换字体</a>
-						</li>
-						
-					</ul>
-				</div>
-			<div class="mui-scrollbar mui-scrollbar-vertical"><div class="mui-scrollbar-indicator" style="transition-duration: 0ms; display: none; height: 8px; transform: translate3d(0px, -8px, 0px) translateZ(0px);"></div></div></div>
-
-		</div>
 		
 		<div id="slider" class="mui-slider" >
 			<div class="mui-slider-group mui-slider-loop">
 				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 				<div class="mui-slider-item mui-slider-item-duplicate">
 					<a href="imgHome.html">
-						<img src="images/weixin_20180210160321.jpg">
+						<img class='1_page' src="images/weixin_20180210160321.jpg">
 					</a>
 				</div>
 				<!-- 第一张 -->
 				<div class="mui-slider-item">
 					<a href="imgHome.html">
-						<img src="images/weixin_20180210160443.jpg">
+						<img class='1_page' src="images/weixin_20180210160443.jpg">
 					</a>
 				</div>
 				<!-- 第二张 -->
 				<div class="mui-slider-item">
 					<a href="imgHome.html">
-						<img src="images/weixin_20180210160724.jpg">
+						<img class='2_page' src="images/weixin_20180210160724.jpg">
 					</a>
 				</div>
-				<!-- 第三张 -->
-				<div class="mui-slider-item">
-					<a href="imgHome.html">
-						<img src="images/weixin_20180210160525.jpg">
-					</a>
-				</div>
-				<!-- 第四张 -->
-				<div class="mui-slider-item">
-					<a href="imgHome.html">
-						<img src="images/weixin_20180210160525.jpg">
-					</a>
-				</div>
+				
 				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
 				<div class="mui-slider-item mui-slider-item-duplicate">
 					<a href="imgHome.html">
-						<img src="images/weixin_20180210160321.jpg">
+						<img class='1_page' src="images/weixin_20180210160443.jpg">
 					</a>
 				</div>
 			</div>
@@ -140,46 +108,12 @@
 	<!-- <iframe style="position: fixed;left: 0;bottom: 0;" src="homeTab.html" width="400" height="60"></iframe> -->
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript" charset="utf-8">
-			mui.init({
-				swipeBack:true //启用右滑关闭功能
-			});
+			
 			var slider = mui("#slider");
-			document.getElementById("switch").addEventListener('toggle', function(e) {
-				if (e.detail.isActive) {
-					slider.slider({
-						interval: 5000
-					});
-				} else {
-					slider.slider({
-						interval: 0
-					});
-				}
+			slider.slider({
+				interval: 2000
 			});
-			
-			
-			
-			mui.plusReady(function () {
-//				var view = plus.nativeObj.View.getViewById("title");
-//				
-//				var bitmap = new plus.nativeObj.Bitmap("back");
-//				bitmap.loadBase64Data("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAb1BMVEUAAAAAev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8AAACubimgAAAAI3RSTlMAGfUTGfQTGPMSGPIYGhgaGBsXGxcbFxwXHBccFhwWHRYdHWufDPQAAAABYktHRACIBR1IAAAAB3RJTUUH4QETEBwooeTlkQAAAJVJREFUSMft1EkSgkAQRNFGUXFWHBDBibr/HTUwD5B/48Ig1y+io7u6MqUhf5hsNEY+j5hMgZ/FJ8Xc9ovos3T96utjbfqN/Nb0O/m96Uv5g+mP8ifTn+Ur01/ka9Nf5RvTt/I309/lH6Z/yr9Mn+Q71/MT8B34K/E58Enzv8R/K98HvnF8p3lr8F7izce7lbf3kJ/lDQp9HdBhgg3PAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE3LTAxLTE5VDE2OjI4OjQwKzA4OjAwpTDFwQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNy0wMS0xOVQxNjoyODo0MCswODowMNRtfX0AAAAASUVORK5CYII=");
-//				view.drawBitmap(bitmap, {}, {
-//					top: "10px",
-//					left: "10px",
-//					width: "24px",
-//					height: "24px"
-//				});
-//				
-//				view.setTouchEventRect({top:"0px",left:"0px",width:"44px",height:"100%"});
-			});
-			
-			mui('.mui-scroll-wrapper').scroll();
-			mui('body').on('shown', '.mui-popover', function(e) {
-				//console.log('shown', e.detail.id);//detail为当前popover元素
-			});
-			mui('body').on('hidden', '.mui-popover', function(e) {
-				//console.log('hidden', e.detail.id);//detail为当前popover元素
-			});
+			initRefresh();
 		</script>
 	</body>
 
