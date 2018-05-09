@@ -27,9 +27,9 @@ function addDynasty(dynastys){
 		var dynasty = dynastys[i];
 		var dynastyEle = document.createElement("a");
 		dynastyEle.innerHTML = dynasty.name;
-		dynastyEle.onclick = function(){
-			$('html,body').animate({scrollTop:$('#d_'+dynasty.id).offset().top}, 800);
-		}
+//		dynastyEle.onclick = function(){
+//			$('html,body').animate({scrollTop:$('#d_'+dynasty.id).offset().top}, 800);
+//		}
 		$('#dynasty_list').append(dynastyEle);
 	}
 }
@@ -58,11 +58,13 @@ function addAuthors(dynasty, authors){
 	var li = document.createElement("li");
 	li.setAttribute("id", "d_"+dynasty.id);
 	li.className = "mui-table-view-divider mui-indexed-list-group";
+	li.setAttribute('data-group',dynasty.name);
 	li.innerHTML = dynasty.name;
 	$('#author_list').append(li);
 	for(var i=0; i<authors.length; i++){
 		var li = document.createElement("li");
 		li.className = "mui-table-view-cell mui-indexed-list-item";
+		li.setAttribute('data-tags',dynasty.name+'_'+i);
 		var author = authors[i];
 		li.innerHTML = author.name;
 		authorClick(author,li);

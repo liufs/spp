@@ -8,14 +8,16 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link rel="stylesheet" href="css/mui.min.css">
+		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/mui.indexedlist.css" rel="stylesheet" />
-		<script type="text/javascript" src="sql.js"></script>
-		<script src="jquery.js"></script>
 		<script src="js/productin_bean.js"></script>
 		<script src="js/classification.js"></script>
 		<script src="js/author.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 		<script src="js/DB.js"></script>
+		<script src="js/mui.min.js"></script>
+		<!--<script src="js/update.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/mui.indexedlist.js"></script>
 		<script type="text/javascript">
 			window.onload = function() {
 				// 初始化内容 
@@ -49,60 +51,57 @@
 	</head>
 
 	<body>
-
-		<div>
-
-			<div id="header">
-				<div id="segmentedControl" class="mui-segmented-control">
-					<a class="mui-control-item mui-active" href="#item1">作者</a>
-					<a class="mui-control-item" href="#item2">作品</a>
-					<a class="mui-control-item" href="#item3">分类</a>
-				</div>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<div id="segmentedControl" class="mui-segmented-control">
+				<a class="mui-control-item mui-active" href="#item1">作者</a>
+				<a class="mui-control-item" href="#item2">作品</a>
+				<a class="mui-control-item" href="#item3">分类</a>
 			</div>
-			<div class="mui-content">
-				<div id="item1" class="mui-control-content mui-active">
+		</header>
 
-					<div class="mui-content ">
-						<div id='list' class="mui-indexed-list">
+		<div class="mui-content">
+			<div id="item1" class="mui-control-content mui-active">
 
-							<div id="dynasty_list" class="mui-indexed-list-bar"></div>
-							<div class="mui-indexed-list-inner">
+				<div id='list' class="mui-indexed-list">
 
-								<ul id="author_list" class="mui-table-view">
-								</ul>
-							</div>
-						</div>
+					<div id="dynasty_list" class="mui-indexed-list-bar"></div>
+					<div class="mui-indexed-list-alert"></div>
+					<div class="mui-indexed-list-inner">
+						<ul id="author_list" class="mui-table-view">
+						</ul>
 					</div>
 
 				</div>
 
-				<div id="item2" class="mui-control-content">
+			</div>
 
-					<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed" id="production">
-					</ul>
+			<div id="item2" class="mui-control-content">
 
-				</div>
-
-				<div id="item3" class="mui-control-content "></div>
+				<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed" id="production">
+				</ul>
 
 			</div>
 
+			<div id="item3" class="mui-control-content "></div>
+
 		</div>
+
 		<!--<iframe style="position: fixed;left: 0;bottom: 0;" src="homeTab.html" width="400" height="60"></iframe>
 -->
-		<script src="js/mui.min.js"></script>
-		<!--<script src="js/update.js" type="text/javascript" charset="utf-8"></script>-->
-		<script src="js/mui.indexedlistjs/mui.indexedlist.js"></script>
+		
 		<script>
 			mui.init();
-			//			mui.ready(function() {
-			//				var header = document.querySelector('header.mui-bar');
-			//				var list = document.getElementById('list');
-			//				//calc hieght
-			//				list.style.height = (document.body.offsetHeight) + 'px';
-			//				//create
-			//				window.indexedList = new mui.IndexedList(list);
-			//			});
+			mui.ready(function() {
+				var header = document.querySelector('header.mui-bar');
+		
+				
+				 var list = document.getElementById('list');
+                //calc hieght
+                list.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
+list.style.height =   '550px';
+                //create
+                window.indexedList = new mui.IndexedList(list);
+			});
 		</script>
 	</body>
 
