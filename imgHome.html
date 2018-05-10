@@ -87,12 +87,16 @@
 				if(isLogin()) {
 					var query = 'SELECT * FROM product where product_id="' + p_id + '"';
 					db.query(query, function(tx, res) {
-
+						if(res.rows.length == 0){
+							alert('数据获取失败');
+						}
+						
 						for(var i = 0; i < res.rows.length; i++) {
 							var p = new production(res.rows[i].product_name, res.rows[i].product_author, res.rows[i].product_info);
 							insertCollection('spp', p_id, '', p.name, p.author, p.description);
 							alert('收藏：' + p_id);
 						}
+						
 
 					});
 				} else {
@@ -103,7 +107,7 @@
 				}
 			})
 			window.addEventListener('refresh', function(e) {
-				location.reload();
+				location.reload(); 
 			})
 		</script>
 	</body>

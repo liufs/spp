@@ -34,7 +34,7 @@ function initClick(){
 				id: 'imgHome.html',
 				styles: {}, //窗口参数 
 				extras:{
-					p_id:'1'
+					p_id:'3'
 					
 				}
 			});

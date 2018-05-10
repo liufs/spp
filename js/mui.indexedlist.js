@@ -21,7 +21,6 @@
 			var self = this;
 			self.options = options || {};
 			self.box = holder;
-			alert(self.box.ID);
 			if (!self.box) {
 				throw "实例 IndexedList 时需要指定 element";
 			}

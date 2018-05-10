@@ -493,7 +493,7 @@
  		},
  	]);
  	db.insert('collection', row, function() {
-   		 		alert("insert " + product_name);
+// 		 		alert("insert " + product_name);
  	});
  }
  insertCollection("spp","2", "2", "桑生李树", "[秦]佚名", "南顿张助，于田中种禾，见李核，欲持去，顾见空桑，中");
