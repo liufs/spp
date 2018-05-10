@@ -7,18 +7,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 
 		<!--标准mui.css-->
 		<link rel="stylesheet" href="css/mui.min.css">
 		<!--App自定义的css-->
 		<!--<link rel="stylesheet" type="text/css" href="../css/app.css" />-->
 		<style>
-			
-			.mui-plus .plus{
+			.mui-plus .plus {
 				display: inline;
 			}
 			
-			.plus{
+			.plus {
 				display: none;
 			}
 			
@@ -27,22 +27,27 @@
 				top: 16px;
 				right: 6px;
 			}
+			
 			#topPopover .mui-popover-arrow {
 				left: auto;
 				right: 6px;
 			}
+			
 			p {
 				text-indent: 22px;
 			}
+			
 			span.mui-icon {
 				font-size: 14px;
 				color: #007aff;
 				margin-left: -15px;
 				padding-right: 10px;
 			}
+			
 			.mui-popover {
 				height: 300px;
 			}
+			
 			.mui-content {
 				padding: 10px;
 			}
@@ -52,12 +57,13 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			
+			<button id='collecte' class="mui-pull-right">收藏</button>
+
 		</header>
-		
+
 		<div class="mui-content">
 			<div class="mui-content-padded">
-				
+
 				<h4 style="text-align: center;">惜秋华.七夕</h4>
 				<h5 style="text-align: center;">[宋] 孙培培</h5>
 				<p>popover（弹出菜单）是mobile App中常见的UI组件，在用户点击位置附近弹出悬浮菜单，向用户展示更多信息或提供快捷操作。</p>
@@ -65,12 +71,40 @@
 				</p>
 			</div>
 		</div>
-		
+
 		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/DB.js"></script>
+		<script type="text/javascript" src="js/mine.js"></script>
+		<script type="text/javascript" src="js/productin_bean.js"></script>
 		<script>
 			mui.init();
-			
-			
+			var p_id;
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				p_id = self.p_id; //获得参数
+			});
+			$('#collecte').click(function() {
+				if(isLogin()) {
+					var query = 'SELECT * FROM product where product_id="' + p_id + '"';
+					db.query(query, function(tx, res) {
+
+						for(var i = 0; i < res.rows.length; i++) {
+							var p = new production(res.rows[i].product_name, res.rows[i].product_author, res.rows[i].product_info);
+							insertCollection('spp', p_id, '', p.name, p.author, p.description);
+							alert('收藏：' + p_id);
+						}
+
+					});
+				} else {
+					mui.openWindow({
+						url: 'login.html',
+						id: 'info'
+					});
+				}
+			})
+			window.addEventListener('refresh', function(e) {
+				location.reload();
+			})
 		</script>
 	</body>
 

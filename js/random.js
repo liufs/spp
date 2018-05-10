@@ -27,5 +27,29 @@ function initRefresh(){
 		refreshSlider();
 	})
 }
+function initClick(){
+	$('.1_page').click(function(){
+		mui.openWindow({
+				url: 'imgHome.html',
+				id: 'imgHome.html',
+				styles: {}, //窗口参数 
+				extras:{
+					p_id:'1'
+					
+				}
+			});
+	})
+	$('.2_page').click(function(){
+		mui.openWindow({
+				url: 'imgHome.html',
+				id: 'imgHome.html',
+				styles: {}, //窗口参数 
+				extras:{
+					p_id:'2'
+					
+				}
+			});
+	})
+}
  
  

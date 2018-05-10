@@ -23,7 +23,7 @@
 				// 初始化内容 
 				queryProduction();
 				queryClssification();
-				queryDynasty();
+//				queryDynasty();
 			}
 		</script>
 		<style type="text/css">
@@ -64,10 +64,25 @@
 
 				<div id='list' class="mui-indexed-list">
 
-					<div id="dynasty_list" class="mui-indexed-list-bar"></div>
+					<div id="dynasty_list" class="mui-indexed-list-bar">
+						 <a>a</a>
+                   		 <a>b</a>
+                    		<a>c</a>
+					</div>
 					<div class="mui-indexed-list-alert"></div>
 					<div class="mui-indexed-list-inner">
 						<ul id="author_list" class="mui-table-view">
+							 <li data-group="a" class="mui-table-view-divider mui-indexed-list-group">A</li>
+                        <li data-value="AKU" data-tags="AKeSu" class="mui-table-view-cell mui-indexed-list-item">安阳</li>
+                        <li data-value="BPL" data-tags="ALaShanKou" class="mui-table-view-cell mui-indexed-list-item">安顺</li>
+                        <li data-value="AAT" data-tags="ALeTai" class="mui-table-view-cell mui-indexed-list-item">安庆</li>
+                        <li data-value="NGQ" data-tags="ALiKunSha" class="mui-table-view-cell mui-indexed-list-item">安山</li>
+                        <li data-group="b" class="mui-table-view-divider mui-indexed-list-group">B</li>
+                        <li data-value="BSD" data-tags="BaoShan" class="mui-table-view-cell mui-indexed-list-item">保山机场</li>
+                        <li data-group="c" class="mui-table-view-divider mui-indexed-list-group">C</li>
+                        <li data-value="NBS" data-tags="ChangBaiShan" class="mui-table-view-cell mui-indexed-list-item">长白山机场</li>
+                        <li data-group="D" class="mui-table-view-divider mui-indexed-list-group">D</li>
+                        <li data-value="DLU" data-tags="DaLi" class="mui-table-view-cell mui-indexed-list-item">大理机场</li>
 						</ul>
 					</div>
 
@@ -92,14 +107,16 @@
 		<script>
 			mui.init();
 			mui.ready(function() {
-				var header = document.querySelector('header.mui-bar');
-		
-				
+//				var header = document.querySelector('header.mui-bar');
+//		
+//				
 				 var list = document.getElementById('list');
-                //calc hieght
+				 
+//              //calc hieght
                 list.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
-list.style.height =   '550px';
-                //create
+//list.style.height =   '550px';
+//              //create
+alert(list.style.height);
                 window.indexedList = new mui.IndexedList(list);
 			});
 		</script>

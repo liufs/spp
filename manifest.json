@@ -234,7 +234,8 @@
 					"login.html"
 				],
 				"refer": [
-					"mine.html"
+					"mine.html",
+					"imgHome.html"
 				],
 				"priority": 0
 			},
@@ -284,13 +285,22 @@
 					"js/mui.min.js",
 					"css/mui.min.css"
 				],
-				"refer": [],
+				"refer": [
+					"login.html"
+				],
 				"priority": 0
 			},
 			"userInfo.html": {
 				"resources": [],
 				"refer": [
 					"mine.html"
+				],
+				"priority": 0
+			},
+			"imgHome.html": {
+				"resources": [],
+				"refer": [
+					"login.html"
 				],
 				"priority": 0
 			}
@@ -330,7 +340,6 @@
 				"js/update.js",
 				"images/cipai-7.jpg",
 				"images/jieri-4.jpg",
-				"imgHome.html",
 				"images/jieri-3.jpg",
 				"js/mui.imageViewer.js",
 				"images/cipai-1.jpg",

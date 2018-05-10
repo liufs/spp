@@ -33,7 +33,8 @@
 		"refer": [
 			"index.html",
 			"mine.html",
-			"login.html"
+			"login.html",
+			"imgHome.html"
 		]
 	},
 	"mine.html": {
@@ -81,11 +82,19 @@
 		"resources": [
 			"js/mui.min.js",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"login.html"
 		]
 	},
 	"userInfo.html": {
 		"refer": [
 			"mine.html"
+		]
+	},
+	"imgHome.html": {
+		"refer": [
+			"login.html"
 		]
 	}
 }

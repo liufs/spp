@@ -4,6 +4,7 @@ function initMine() {
 		initLogin();
 		initCard();
 		initCollection();
+		
 	})
 
 }
@@ -16,14 +17,21 @@ function initLogin() {
 		$('#user_info').append($img);
 		$('#user_info').append($i);
 		$('#user_info').click(function() {
-			window.open('userInfo.html', '_self');
+			mui.openWindow({
+				url: 'userInfo.html',
+				id: 'info'
+			});
 
 		})
 	} else {
 		var cc = ('<div class="mui-media-object mui-pull-left head-img" id="login">登陆</div>');
 		$('#user_info').append(cc);
 		$('#user_info').click(function() {
-			window.open('login.html', '_self');
+
+			mui.openWindow({
+				url: 'login.html',
+				id: 'info'
+			});
 		});
 	}
 }
@@ -35,7 +43,12 @@ function initLoginIn() {
 		if("spp" == userName && "123" == passWord) {
 			plus.storage.setItem("user_name", userName);
 			plus.storage.setItem("pass_word", passWord);
-			window.history.go(-1);
+			//获得列表界面的webview  
+			var list = plus.webview.currentWebview().opener();
+			//触发列表界面的自定义事件（refresh）,从而进行数据刷新  
+			mui.fire(list, 'aaa');
+			//返回true，继续页面关闭逻辑  
+			mui.currentWebview.close();
 		} else {
 			alert("密码错误");
 		}

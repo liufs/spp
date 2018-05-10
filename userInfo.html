@@ -12,7 +12,11 @@
 				document.getElementById('qqqq').addEventListener('tap', function() {
 					plus.storage.removeItem('user_name');
 					plus.storage.removeItem('pass_word');
-					window.history.go(-1);
+					//获得列表界面的webview  
+					var list = plus.webview.currentWebview().opener();
+					//触发列表界面的自定义事件（refresh）,从而进行数据刷新  
+					mui.fire(list, 'aaa');
+					mui.currentWebview.close();
 				})
 			}
 		</script>
@@ -62,7 +66,7 @@
 							</li>
 						</ul>
 						<ul class="mui-table-view">
-							<li id="qqqq" class="mui-table-view-cell" style="text-align: center;">
+							<li id="qqqq" class="mui-table-view-cell mui-btn-block" style="text-align: center;">
 								<a>退出登录</a>
 							</li>
 						</ul>
