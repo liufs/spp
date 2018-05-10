@@ -360,14 +360,14 @@
  insertProduct("2", "2", "桑生李树", "[秦]佚名", "南顿张助，于田中种禾，见李核，欲持去，顾见空桑，中");
  insertProduct("3", "2", "董行成", "[秦]佚名", "唐怀州河内县董行成能策贼");
  insertProduct("4", "2", "寇准读书", "[秦]佚名", "初，张咏在成都，闻准入相，谓其僚属曰：“寇公奇材，。。。。。”");
- insertProduct("5", "2", "2", "2", "2");
- insertProduct("6", "2", "2", "2", "2");
- insertProduct("7", "2", "2", "2", "2");
- insertProduct("8", "2", "2", "2", "2");
- insertProduct("9", "2", "2", "2", "2");
- insertProduct("10", "2", "2", "2", "2");
- insertProduct("11", "2", "2", "2", "2");
- insertProduct("12", "2", "2", "2", "2");
+ insertProduct("5", "2", "采薇", "[秦]佚名", "昔我往矣，杨柳依依。今我来思，雨雪霏霏。");
+ insertProduct("6", "2", "江南", "[秦]佚名", "江南可采莲，莲叶何田田，鱼戏莲叶间。鱼戏莲叶。。。");
+ insertProduct("7", "2", "巴东三峡歌", "[秦]佚名", "巴东三峡巫峡长，猿鸣三声泪沾裳。");
+ insertProduct("8", "2", "木兰诗", "[秦]佚名", "唧唧复唧唧，木兰当户织。不闻女叹息，未闻女叹息。");
+ insertProduct("9", "2", "六韬引言", "[秦]佚名", "天下嚷嚷。皆为利往。天下熙熙。皆为利来。");
+ insertProduct("10", "2", "长歌行", "[秦]佚名", "青青园中葵，朝露待日西。");
+ insertProduct("11", "2", "桃夭", "[秦]佚名", "逃之夭夭，灼灼其华。之子于归，宜其世家");
+ insertProduct("12", "2", "上邪", "[秦]佚名", "上邪，我欲与君相知，长命无绝衰。");
 
  function insertClassification(id, name) {
  	var row = [];
@@ -414,10 +414,20 @@
  insertClassifiedWorks("14", "1", "道德经", "images/1.5.jpg");
  insertClassifiedWorks("15", "1", "诗经", "images/1.1.jpg");
 
- insertClassifiedWorks("2a", '2', "诗经全集", "images/1.3.jpg");
- insertClassifiedWorks("2b", "2", "诗经楚辞节选", "images/1.4.jpg");
- insertClassifiedWorks("2c", "2", "道德经", "images/1.5.jpg");
- insertClassifiedWorks("2d", "2", "诗经", "images/1.1.jpg");
+ insertClassifiedWorks("2a", '3', "诗经全集", "images/ti-1.jpg");
+ insertClassifiedWorks("2b", "3", "诗经楚辞节选", "images/ti-2.jpg");
+ insertClassifiedWorks("2c", "3", "道德经", "images/ti-3.jpg");
+ insertClassifiedWorks("2d", "3", "诗经", "images/ti-4.jpg");
+ 
+  insertClassifiedWorks("3a", '2', "诗经全集", "images/1.3.jpg");
+ insertClassifiedWorks("3b", "2", "诗经楚辞节选", "images/1.4.jpg");
+ insertClassifiedWorks("3c", "2", "道德经", "images/1.5.jpg");
+ insertClassifiedWorks("3d", "2", "诗经", "images/1.1.jpg");
+ 
+  insertClassifiedWorks("4a", '4', "诗经全集", "images/jieri-1.jpg");
+ insertClassifiedWorks("4b", "4", "诗经楚辞节选", "images/jieri-2.jpg");
+ insertClassifiedWorks("4c", "4", "道德经", "images/jieri-3.jpg");
+ insertClassifiedWorks("4d", "4", "诗经", "images/jieri-4.jpg");
 
  function insertDynasty(id, name) {
  	var row = [];
@@ -432,9 +442,15 @@
  		// 		alert("insert " + name);
  	})
  }
- insertDynasty("a", "a");
- insertDynasty("b", "b");
- insertDynasty("c", "c");
+ insertDynasty("a", "商");
+ insertDynasty("b", "周");
+ insertDynasty("c", "秦");
+ insertDynasty("d", "三国");
+ insertDynasty("e", "南北");
+ insertDynasty("f", "隋");
+ insertDynasty("g", "唐");
+ insertDynasty("h", "五代");
+ insertDynasty("j", "宋");
 
  function insertAuthor(id, name, dynasty_id, description) {
  	var row = [];
@@ -455,15 +471,32 @@
  		// 		alert("insert " + name);
  	})
  }
- insertAuthor("a1","a1", "a", "aaaa");
- insertAuthor("a2","a2", "a", "aaaa");
- insertAuthor("a3","a3", "a", "aaaa");
- insertAuthor("b1","b1", "b", "bbbb");
- insertAuthor("b2","b2", "b", "bbbb");
- insertAuthor("b3","b3", "b", "bbbb");
- insertAuthor("c1","c1", "c", "cccc");
- insertAuthor("c2","c2", "c", "cccc");
- insertAuthor("c3","c3", "c", "cccc");
+ insertAuthor("a1","商汤", "a", "aaaa");
+
+ insertAuthor("b1","老子", "b", "bbbb");
+ insertAuthor("b2","孔子", "b", "bbbb");
+ insertAuthor("b3","屈原", "b", "bbbb");
+ insertAuthor("c1","项羽", "c", "cccc");
+ insertAuthor("c2","李斯", "c", "cccc");
+ insertAuthor("c3","虞姬", "c", "cccc");
+  insertAuthor("d1","诸葛亮", "d", "cccc");
+ insertAuthor("d2","曹植", "d", "cccc");
+ insertAuthor("d3","曹丕", "d", "cccc");
+  insertAuthor("e1","刘义庆", "e", "cccc");
+ insertAuthor("e2","郦道元", "e", "cccc");
+ insertAuthor("e3","谢灵运", "e", "cccc");
+  insertAuthor("f1","杨广", "f", "cccc");
+ insertAuthor("f2","杨素", "f", "cccc");
+ insertAuthor("f3","卢思道", "f", "cccc");
+  insertAuthor("g1","白居易", "g", "cccc");
+ insertAuthor("g2","李商隐", "g", "cccc");
+ insertAuthor("g3","孟浩然", "g", "cccc");
+  insertAuthor("h1","李煜", "h", "cccc");
+ insertAuthor("h2","牛希济", "h", "cccc");
+ insertAuthor("h3","毛文锡", "h", "cccc");
+  insertAuthor("j1","苏轼", "j", "cccc");
+ insertAuthor("j2","辛弃疾", "j", "cccc");
+ insertAuthor("j3","朱熹", "j", "cccc");
  
  function insertCollection(user_name,product_id, classification_id, product_name, product_author, product_info) {
  	var row = [];
